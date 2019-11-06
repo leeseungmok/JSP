@@ -1,0 +1,13 @@
+* { margin : 0; padding : 0; text-decoration : none; list-style : none; box-sixing : border-box; }
+
+.product { width: 80%; margin : 0 auto; margin-bottom: 50px; }
+
+.product::after { content: ''; display: block; clear: both }
+
+.product > ul { position : relative;}
+
+.product > ul > li { position: relative; top : 50%; transform: translateY(-50%); }
+
+.image { width : 80%;  height: 700px; overflow: hidden; margin : 0 auto ; margin-bottom: 50px; }
+
+.image::after { content: ''; display: block; clear: both }
