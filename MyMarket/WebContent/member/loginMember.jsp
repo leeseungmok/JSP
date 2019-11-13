@@ -1,12 +1,14 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="java.sql.*"%>
+<%@ include file="../dbconn.jsp"%>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
-<script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+<script type="text/javascript" src="../resources/js/jquery-3.4.1.js"></script>
 <title>Login</title>
 </head>
 <body>
-	<jsp:include page="menu.jsp" />
+	<jsp:include page="../menu.jsp" />
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">로그인</h1>
@@ -23,16 +25,16 @@
 					out.println("</div>");
 				}
 			%>
-			<form class="form-signin" action="j_security_check" method="post">
+			<form action="processLoginMember.jsp" method="post">
 				<div class="form-group">
 					<label for="inputUserName" class="sr-only">User Name</label> <input
 						type="text" class="form-control" placeholder="ID"
-						name='j_username' required autofocus>
+						name='id' required autofocus>
 				</div>
 				<div class="form-group">
 					<label for="inputPassword" class="sr-only">Password</label> <input
 						type="password" class="form-control" placeholder="Password"
-						name='j_password' required>
+						name='password' required>
 				</div>
 				<button class="btn btn btn-lg btn-success btn-block" type="submit">로그인</button>
 			</form>

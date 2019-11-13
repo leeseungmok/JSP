@@ -7,7 +7,7 @@
 
 
 <%
-	String filename = "C:\\Users\\USER\\eclipse-workspace\\MyMarket\\WebContent\\image";
+	String filename = "C:\\Users\\USER\\git\\JSP\\JSP\\MyMarket\\WebContent\\image";
 	String encType = "utf-8";
 	int maxSize = 5 * 1024 * 1024;
 

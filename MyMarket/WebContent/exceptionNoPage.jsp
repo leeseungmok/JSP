@@ -294,7 +294,7 @@ h1 {
 <div class="lee" style="margin-left:200px">
 		<p><%=request.getRequestURL()%>
 		<p>
-			<a href="Market.jsp"><button>메인 페이지&raquo;</button></a>
+			<a href="../Market.jsp"><button>메인 페이지&raquo;</button></a>
 	</div>
 
 </body>
