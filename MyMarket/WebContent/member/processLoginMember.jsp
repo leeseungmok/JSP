@@ -26,7 +26,7 @@
 	if(rs.next()){
 		if(password.equals(rs.getString("password"))){
 			session.setAttribute("id",id);
-			response.sendRedirect("../Market.jsp");
+			response.sendRedirect("/MyMarket/Market.jsp");
 		}else{
 			%>
 			<script>
@@ -34,6 +34,7 @@
 			history.back();
 			</script>
 			<% 
+			session.invalidate();
 		}
 		}else{
 			%>
@@ -43,6 +44,7 @@
 			history.back();
 			</script>
 			<% 
+			session.invalidate();
 		}
 	
 

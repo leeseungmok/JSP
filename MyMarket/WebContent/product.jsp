@@ -23,7 +23,9 @@ function addToCart(){
 </script>
 </head>
 <body>
-	<%@ include file="menu.jsp"%>
+
+	<jsp:include page="menu.jsp" flush="true"/>
+	
 	<div class="jumbotron">
 		<div class="jumbotron" style="background-color: rgba(0, 0, 0, 0);">
 			<div class="container">

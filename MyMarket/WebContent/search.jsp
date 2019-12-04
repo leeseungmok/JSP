@@ -17,7 +17,7 @@
 			response.sendRedirect("http://localhost:8080/MyMarket/product.jsp?id=P1237");
 		} else if (usersc.equals("삼성") || usersc.equals("LED50W")) {
 			response.sendRedirect("http://localhost:8080/MyMarket/product.jsp?id=P1238");
-		} else if (usersc.equals("코닥") && usersc.equals("LED")) {
+		} else if (usersc.equals("코닥") || usersc.equals("LED")) {
 			response.sendRedirect("http://localhost:8080/MyMarket/product.jsp?id=P1239");
 		} else if (usersc.equals("클럭") || usersc.equals("마사지")) {
 			response.sendRedirect("http://localhost:8080/MyMarket/product.jsp?id=P1240");

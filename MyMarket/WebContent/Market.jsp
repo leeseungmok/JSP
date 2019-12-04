@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="./resources/js/validation.js"></script>
-<title>승팡!</title>
+<title>승팡!!!!!!!!!!!!</title>
 </head>
 <body>
 	<%@ include file="menu.jsp"%>

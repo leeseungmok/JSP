@@ -1,14 +1,15 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.sql.*"%>
+<%@ include file="dbconn.jsp"%>
 <%
-	String sessionId = (String) session.getAttribute("id");
+	String sessionId = (String) session.getAttribute("sessionId");
 %>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/MyMarket/resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/MyMarket/style.css" />
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
@@ -28,9 +29,14 @@
 				<hr>
 				<li><a href="<c:url value="/addProduct.jsp"/>">상품 등록</a></li>
 				<hr>
-				<li><a href="<c:url value="/editProduct.jsp?edit=update"/>">상품 수정</a></li>
+				<li><a href="<c:url value="/editProduct.jsp?edit=update"/>">상품
+						수정</a></li>
 				<hr>
-				<li><a href="<c:url value="/editProduct.jsp?edit=delete"/>">상품 삭제</a></li>
+				<li><a href="<c:url value="/editProduct.jsp?edit=delete"/>">상품
+						삭제</a></li>
+				<hr>
+				<li><a href="<c:url value="/BoardListAction.do?pageNum=1"/>">
+						게시판</a></li>
 				<hr>
 				<li><a href="<c:url value="/lee.jsp"/>">휴게소</a></li>
 			</ul>
@@ -50,21 +56,40 @@
 				style="margin-left: 465px;">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
 		</form>
+		<%
+			if (sessionId == null) {
+		%>
+		<p style="padding: 7px 5px 0 5px;"><a href="<c:url value="/member/loginMember.jsp"/>">로그인</a></p>
+		<p style="padding: 7px 5px 0 5px;"><a href="<c:url value="/member/addMember.jsp"/>">/회원 가입</a></p>
+		<%
+			} else {
 
-		<c:choose>
-			<c:when test="${empty sessionId}">
-				<li><a href="<c:url value="/member/loginMember.jsp"/>">로그인</a></li>
-				<hr>
-				<li><a href="<c:url value="/member/addMember.jsp"/>">/회원 가입</a></li>
-			</c:when>
-			<c:otherwise>
-				<li style="padding-top: 7px; color: black">[<%=sessionId%>님 ]
-				</li>
-				<li><a href="<c:url value="/member/logoutMember.jsp"/>">로그아웃</a></li>
-				<li><a href="<c:url value="/member/updateMember.jsp"/>">/회원
-						수정</a></li>
-			</c:otherwise>
-		</c:choose>
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+				String sql = "select * from member where id = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, sessionId);
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
+		%>
+
+		<p style="padding: 7px 5px 0 5px; color: magenta">[<%=rs.getString("name")%>님] </p>
+		<p style="padding: 7px 0 0 0;" ><a href="<c:url value="/member/logoutMember.jsp"/>">로그아웃</a></p>
+		<p style="padding: 7px 0 0 0;"><a
+			href="<c:url value="/member/resultMember.jsp?id="/><%=sessionId%>">/회원
+				정보</a></p>
+		<%
+			}
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			}
+		%>
+
+
 	</nav>
 </body>
 </html>

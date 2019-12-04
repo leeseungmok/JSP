@@ -45,8 +45,8 @@
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2">상품명</label>
-						<div class="col-sm-3">
-							<input type="text" id="name" name="name" class="form- control"
+						<div class="col-sm-6">
+							<input type="text" id="name" name="name" class="form-control"
 								value="<%=rs.getString("p_name")%>">
 						</div>
 					</div>

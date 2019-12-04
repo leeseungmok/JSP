@@ -16,6 +16,11 @@
   box-sizing: border-box;
 }
 
+.container {
+	width: 100%;
+	height: 100%;
+}
+
 h1 {
   font-family: 'Arima Madurai', cursive;
   color: black;
@@ -277,7 +282,7 @@ h1 {
 </head>
 <body translate="no">
 <div class="container">
-<h1>요청하신 페이지를 찾을 수 없습니다.</h1>
+<h1><a href="/MyMarket/Market.jsp">요청하신 페이지를 찾을 수 없습니다.</a></h1>
 <div class="bird-container bird-container--one">
 <div class="bird bird--one"></div>
 </div>

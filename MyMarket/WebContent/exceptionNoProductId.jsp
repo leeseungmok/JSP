@@ -16,6 +16,11 @@
   box-sizing: border-box;
 }
 
+.container {
+	width: 100%;
+	height: 100%;
+}
+
 h1 {
   font-family: 'Arima Madurai', cursive;
   color: black;
@@ -277,7 +282,7 @@ h1 {
 </head>
 <body translate="no">
 <div class="container">
-<h1>해당 상품이 존재하지 않습니다.</h1>
+<h1> <a href="/MyMarket/Market.jsp">해당 상품이 존재하지 않습니다.</a></h1>
 <div class="bird-container bird-container--one">
 <div class="bird bird--one"></div>
 </div>
@@ -291,11 +296,6 @@ h1 {
 <div class="bird bird--four"></div>
 </div>
 </div>
-<div class="lee" style="margin-left:200px">
-		<p><%=request.getRequestURL()%>?<%=request.getQueryString()%>
-		<p>
-			<a href="products.jsp"><button>상품 목록&raquo;</button></a>
-	</div>
 
 </body>
 </html>

@@ -5,6 +5,7 @@
 <head>
 <link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
 <script type="text/javascript" src="../resources/js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="../resources/js/add.js"></script>
 <link rel="stylesheet" href="../style.css">
 <title>회원 가입</title>
 </head>
@@ -62,7 +63,7 @@
 				<div class="form-group row">
 					<label class="col-sm-2">전화번호</label>
 					<div class="col-sm-3">
-						<input type="tel" name="phone" class="form-control">
+						<input type="tel" id="phone" name="phone" class="form-control">
 					</div>
 				</div>
 				<div class="form-group row">
@@ -81,7 +82,7 @@
 				<div class="form-group row">
 					<div class="col-sm-offset-2 col-sm-10">
 						<input type="submit" id="sum" class="btn btn-primary"
-							value=등록>
+							value=가입>
 					</div>
 				</div>
 			</form>
